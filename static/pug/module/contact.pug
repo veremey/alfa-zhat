@@ -1,0 +1,58 @@
+- var list = ['Головки светофорные', 'Светофоры карликовые', 'Светофоры консольные', 'Системы светофорные', 'Светофоры мачтовые', 'Указатели световые светодиодные', 'Звуковые сигнальные устройства', 'Переездное оборудование', 'Устройства СЦБ для метро', 'Светильники светодиодные', 'Стрелочные электроприводы', 'Перемычки и соединители для СЦБ', 'Бортовые источники питания', 'Дроссель-трансформаторы', 'Буферные фонари', 'Защитные устройства', 'Ящики путевые', 'Муфты кабельные', 'Оборудование СЦБ', 'Аппаратура связи', 'Изоляция для ж/д путей'];
+
+ul.breadcrumbs(data-aos="fade-down", data-aos-delay="550")
+	li
+		a(href="/") Главная
+	li Контакты
+
+h2.title__lines КОНТАКТНАЯ ИНФОРМАЦИЯ
+
+.contact.mod_first(data-aos="fade-down", data-aos-delay="480")
+	#map
+
+	.contact__location
+		.contact__item
+			p.contact__desc.contact_adress Россия, г. Нижний Новгород, ул. Торфяная, 30 (территория бывшего завода «Лазурь»)
+		.contact__item
+			p.contact__desc.contact_tel
+				a(href="tel:88005554939") 8 (800) 555-49-39
+				|  (звонок по России бесплатный)
+				a(href="tel:88314237769")   8 (831) 423-77-69
+				|,
+				a(href="tel:88312113677")   (831) 211-36-77
+				<br>
+				a(href="tel:39290537769")   8 (929) 053-77-69
+		.contact__item
+			p.contact__desc.contact_mail
+				a(href="mailto:alfa.zhat@gmail.com") alfa.zhat@gmail.com
+
+section.section.mod_last.send
+	h3.send__title  НАПИШИТЕ НАМ
+	.send__layout
+		p.send__desc Для получения консультации о товаре, цене и сроках доставки отправьте запрос на электронную почту или заполните форму обратной связи, и в ближайшее время наш менеджер свяжется с Вами!
+
+		form(action="/", method="POST").send__form.js-validate
+			.send__fields
+				fieldset.send__fieldset
+					input(type="text", name="name", required).send__input
+					label(for="name").send__label Как Вас зовут? *
+				.send__row
+					fieldset.send__fieldset.mod_half
+						input(type="text", name="tel", required).send__input.send_tel
+						label(for="name").send__label Телефон *
+					fieldset.send__fieldset.mod_half
+						input(type="text", name="email").send__input
+						label(for="name").send__label Электронная почта
+				textarea(name="message", cols="", rows="", placeholder="Введите Ваше сообщение *").send__message
+			button(type="submit").btn.btn_large отправить
+
+
+
+
+block scriptFooter
+	//- script(src="https://maps.googleapis.com/maps/api/js?sensor=false")
+	script(src="https://maps.googleapis.com/maps/api/js?v=3.exp")
+
+	script(src="static/js/lib/mapster.js")
+	script(src="static/js/mapOptions.js")
+	script(src="static/js/map.js")

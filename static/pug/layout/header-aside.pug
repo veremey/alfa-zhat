@@ -1,0 +1,49 @@
+- var list = ['Головки светофорные', 'Светофоры карликовые', 'Светофоры консольные', 'Системы светофорные', 'Светофоры мачтовые', 'Указатели световые светодиодные', 'Звуковые сигнальные устройства', 'Переездное оборудование', 'Устройства СЦБ для метро', 'Светильники светодиодные', 'Стрелочные электроприводы', 'Перемычки и соединители для СЦБ', 'Бортовые источники питания', 'Дроссель-трансформаторы', 'Буферные фонари', 'Защитные устройства', 'Ящики путевые', 'Муфты кабельные', 'Оборудование СЦБ', 'Аппаратура связи', 'Изоляция для ж/д путей'];
+
+header.header(data-aos="flip-down", data-aos-delay="300")
+	.header__top
+		.logo(data-aos="zoom-out", data-aos-delay="800", data-aos-duration="400")
+			a(href="#").logo__link
+				img(src='static/svg/logo.svg', alt='logo').logo__img
+		button.btn_menu
+			span
+			span
+			span
+		.info
+			nav.guide
+				a(href="#").guide__link О КОМПАНИИ
+				a(href="#").guide__link НОВОСТИ
+				a(href="#").guide__link КОНТАКТЫ
+			span.v-line
+			.phone
+				i.icon-phone
+				a(href="tel:88005554939").phone__link 8 800 555 49 39
+			span.v-line
+			.mail
+				i.icon-mail
+				a(href='mailto:alfa.zhat@gmail.com').mail__link alfa.zhat@gmail.com
+			span.v-line
+			.select.js-select
+				.select__text.js-select-text
+					span ru
+				input(type="hidden", value="").js-select-input
+				ul.select__list.js-select-list
+					li(data-id="0").select__link
+						span ru
+					li(data-id="1").select__link
+						span en
+	.header__bottom
+		.catalog.catalog_static(data-aos="zoom-in", data-aos-delay="350")
+			.catalog__header
+				.burger
+				h6.catalog__title КАТАЛОГ ПРОДУКЦИИ
+			nav.catalog__nav
+				ul.menu
+					each link in list
+						li.menu__list
+							a(href="#").menu__link #{link}
+		.header__search(data-aos="zoom-in", data-aos-delay="350")
+			form(action="/", method="POST", autocomplete="off").search
+				fieldset.search__field
+					input(type="text", name="mainSearch", placeholder="поиск по сайту").search__input
+					button(type="submit").btn.btn_search НАйти

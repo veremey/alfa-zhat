@@ -1,0 +1,69 @@
+// Normally icon styles
+.title
+	&__biggest
+		font-size: 36px
+		line-height: 42px
+		letter-spacing: .025em
+		text-transform: uppercase
+		color: #fff
+		margin-bottom: .5em
+		+rb
+		+r(600)
+			font-size: 28px
+			line-height: 36px
+
+	&__detail
+		font-size: 18px
+		line-height: 22px
+		color: #fff
+		+rr
+
+	&__article
+		position: relative
+		font-size: 22px
+		letter-spacing: .025em
+		// MOD LINE
+		text-transform: uppercase
+		text-align: center
+		// word-spacing: nowrap
+		overflow: hidden
+		margin-bottom: 40px
+		+rb
+		&:before,
+		&:after
+			content: ''
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			width: 50%
+			height: 1px
+			top: -1px
+			border-top: 1px solid #d4d8d9
+		&:before,
+			right: 40px
+			margin-left: -50%
+		&:after
+			left: 40px
+			margin-right: -50%
+
+		&.mod_zeroBottom
+			margin-bottom: 0
+			line-height: .8
+			&:before,
+			&:after
+				border-color: $orange
+
+	&__lines
+
+		text-align: center
+		font-size: 22px
+		line-height: 80px
+
+		border-bottom: 1px solid $gray
+		letter-spacing: .025em
+		color: $dark
+		text-transform: uppercase
+		+rb
+
+.mod_left
+	text-align: left

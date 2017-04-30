@@ -1,0 +1,56 @@
+extends _layout
+block content
+	.out
+		.layout
+			include layout/header-01.pug
+			include module/promo.pug
+		include layout/footer.pug
+
+block scriptFooter
+	.popup.is_visible
+		.popup__content
+
+			a(href="#").icon-close.js-popup-close
+			.popup__wrap
+				h4.send__title Оставте заявку
+				p.send__desc Заполните данную форма и наш менеджер <br> в кратчайшие сроки свяжется с Вами и сообщит <br> полную информацию о товаре
+				form(method='POST', action='/', autocomplete='on').blank.js-validate
+					.blank__box
+						fieldset.blank__fieldset
+							input(type='text', name='name').blank__input
+							label(for="name").blank__label Как Вас зовут? *
+
+						fieldset.blank__fieldset
+							input(type='text', name='tel').blank__input.send_tel
+							label(for="tel").blank__label Телефон *
+					.blank__box
+						fieldset.blank__fieldset
+							input(type='text', name='items').blank__input.blank_item
+							label(for="items").blank__label Количество *
+
+						fieldset.blank__fieldset
+							input(type='text', name='time').blank__input.blank_time
+							label(for="time").blank__label Сроки закупки *
+					.blank__conteiner
+						p.send__desc Объект установки *
+						.select.js-select
+							.select__text.js-select-text
+								span Промышленные пути
+							input(type="hidden", value="", name="obectYstanovki").js-select-input
+							ul.select__list.js-select-list
+								li(data-id="0").select__link
+									span Промышленные пути
+								li(data-id="1").select__link
+									span Не промышленные пути
+					.blank__conteiner
+						p.send__desc Цель закупки *
+						.select.js-select
+							.select__text.js-select-text
+								span Текущая закупка
+							input(type="hidden", value="", name="celZakypki").js-select-input
+							ul.select__list.js-select-list
+								li(data-id="0").select__link
+									span Текущая закупка
+								li(data-id="1").select__link
+									span Будущая закупка
+				button(type="submit").btn.btn_large Запросить цену

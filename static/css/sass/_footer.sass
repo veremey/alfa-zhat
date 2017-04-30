@@ -1,0 +1,60 @@
+// Normally footer styles
+
+.footer
+	margin-top: 80px
+	&__top
+		background-color: $light
+	&__bottom
+		display: flex
+		height: 46px
+		align-items: center
+		justify-content: center
+		background-color: $dark
+		text-align: center
+	.info
+		width: 100%
+		height: 80px
+		+r(1100)
+			height: 120px
+		+r(800)
+			display: flex
+			top: 0
+			height: auto
+			padding: 20px 0 0
+			flex-direction: column
+			justify-content: flex-start
+	.guide
+		width: 29%
+		margin-bottom: 0
+		+r(1100)
+			width: 100%
+			+ span
+				display: none
+		&__link
+			color: $dark
+			+tr(.4s)
+			&:visited
+				color: $orange
+			&:hover
+				color: $orange
+	.mail__link
+		color: $dark
+		+hover
+
+.copy
+	font-size: 13px
+	color: #b6bdbf
+	+rr
+
+.locating
+	display: flex
+	align-items: center
+	&__link
+		margin-left: 10px
+		font-size: 15px
+		color: $dark
+		+rr
+		+hover
+		+r(800)
+			padding: 5px 0
+			text-align: center

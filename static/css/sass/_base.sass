@@ -1,0 +1,101 @@
++font('RobotoRegular', 'RobotoRegular')
++font('RobotoMedium', 'RobotoMedium')
++font('RobotoBold', 'RobotoBold')
+
+=rr
+	font-family: 'RobotoRegular', Arial, sans-serif
+=rm
+	font-family: 'RobotoMedium', Arial, sans-serif
+=rb
+	font-family: 'RobotoBold', Arial, sans-serif
+
+
+// colors
+$n: transparent
+$light: #f2f4f5
+$gray: #d4d8d9
+$brown: #bf3030
+$orange: #f74040 // rgba(247, 64, 64, 1.0)
+$dark: #414a4d
+
+%hover
+	+tr(.4s)
+	&:visited
+		color: $orange
+	&:hover
+		color: $orange
+
+=hover
+	@extend %hover
+
+// size
+$max-width: 1180px
+
+html
+	+selection
+		background: rgba(0, 0, 0, .2)
+		color: #fff
+
+body
+	min-width: 200px
+	font-family:  Arial, sans-serif
+	font-size: 13px
+	-webkit-font-smoothing: antialiased
+
+
+// common blocks
+
+.out
+	position: relative
+	background-color: #fff
+	+clr
+
+.layout
+	max-width: $max-width
+	width: 96%
+	margin: 0 auto
+	+clr
+	+r(800)
+		width: 100%
+		padding: 0 20px
+
+.section
+	margin-top: 80px
+	+r(600)
+		margin-top: 40px
+
+.mod_first
+	margin-top: 60px
+
+
+.mod_center
+	text-align: center
+
+.mod_limit
+	+limitLines( $maxLinesPortrait: 2, $maxLinesLandscape: 2, $fgCol: #fff, $bgCol: #fff, $lineHeight: 1.3)
+
+h1, h2, h3, h4, h5, h6
+	margin: 0 0 .8em
+	font-weight: normal
+	line-height: 1.1
+h1
+	font-size: 2em
+h2
+	font-size: 1.8em
+h3
+	font-size: 1.6em
+h4
+	font-size: 1.5em
+h5
+	font-size: 1.4em
+h6
+	font-size: 1.3em
+
+a
+	text-decoration: none
+
+b, strong
+	font-weight: normal
+
+p
+	margin-bottom: 0

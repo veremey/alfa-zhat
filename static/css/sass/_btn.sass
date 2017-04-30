@@ -1,0 +1,108 @@
+// Normally btn
+
+.btn
+	display: inline-block
+	text-align: center
+	line-height: 46px
+	color: #fff
+	background-color: $orange
+	text-transform: uppercase
+	letter-spacing: .025em
+	border: none
+	outline: none
+	+tr(.4s)
+	+rm
+	&:hover
+		background-color: $brown
+
+	&_small
+		padding: 0 30px
+		font-size: 15px
+	&_large
+		padding: 0 40px
+		font-size: 15px
+	&_more
+		width: 100%
+		text-align: center
+		border: 1px solid $orange
+		background-color: $n
+		color: $dark
+		font-size: 15px
+		text-transform: none
+		+rr
+		&:hover
+			color: #fff
+		strong
+			+rb
+
+	&_menu
+		display: none
+		width: 62px
+		height: 62px
+		position: relative
+		// top: 0
+		// right: 3rem
+		background-color: $n
+		border: none
+		outline: none
+		&:before,
+		&:after
+			content: none
+		+r(800)
+			display: inline-block
+			width: 42px
+			height: 32px
+		span
+			display: block
+			position: relative
+			height: 2px
+			width: 100%
+			background: $orange
+			border-radius: 2px
+			opacity: 1
+			left: 0
+			-webkit-transform: rotate(0deg)
+			-moz-transform: rotate(0deg)
+			-o-transform: rotate(0deg)
+			transform: rotate(0deg)
+			-webkit-transition: .25s ease-in-out
+			-moz-transition: .25s ease-in-out
+			-o-transition: .25s ease-in-out
+			transition: .25s ease-in-out
+			&:not(:first-child)
+				margin-top: 30%
+			&:nth-child(1)
+				-webkit-transform-origin: left center
+				-moz-transform-origin: left center
+				-o-transform-origin: left center
+				transform-origin: left center
+			&:nth-child(2)
+				-webkit-transform-origin: left center
+				-moz-transform-origin: left center
+				-o-transform-origin: left center
+				transform-origin: left center
+			&:nth-child(3)
+				-webkit-transform-origin: left center
+				-moz-transform-origin: left center
+				-o-transform-origin: left center
+				transform-origin: left center
+
+		&.is_active
+			z-index: 2005
+			span
+				background: #fff
+				&:nth-child(1)
+					-webkit-transform: rotate(45deg)
+					-moz-transform: rotate(45deg)
+					-o-transform: rotate(45deg)
+					transform: rotate(45deg)
+					width: 105%
+				&:nth-child(2)
+					width: 0%
+					opacity: 0
+				&:nth-child(3)
+					-webkit-transform: rotate(-45deg)
+					-moz-transform: rotate(-45deg)
+					-o-transform: rotate(-45deg)
+					transform: rotate(-45deg)
+					width: 105%

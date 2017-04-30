@@ -1,0 +1,12 @@
+//=include lib/jquery.js
+//=include lib/slick.min.js
+//=include lib/jquery.formatter.min.js
+//=include lib/jquery.validate.min.js
+//=include lib/jquery.mCustomScrollbar.js
+//=include lib/classie.js
+//=include lib/aos.js
+//=include scroll.js
+//=include init-scroll.js
+//=include init-select.js
+//=include init-validate.js
+//=include common.js

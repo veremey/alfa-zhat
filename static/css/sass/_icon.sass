@@ -1,0 +1,18 @@
+// Normally icon styles
+@each $s in icon-phone,icon-mail,icon-locating,icon-slick-next,icon-slick-next-red,icon-lupa,icon-plus,icon-rub,icon-assortment,icon-earth,icon-clock,icon-time,icon-arround,icon-bird,icon-tile,icon-tile-active,icon-list,icon-list-active,icon-fly,icon-close,icon-wobble
+	.#{$s}
+		display: inline-block
+		+s(#{$s})
+
+.icon-arround
+	margin-left: 10px
+.icon-bird
+	margin-left: 10px
+.icon-close
+	position: absolute
+	top: -50px
+	left: 50%
+	+trx(-50%)
+	+tr(.4s)
+	&:hover
+		transform: translate(-50%, 0) scale(.8)

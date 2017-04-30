@@ -1,0 +1,1615 @@
+.startScreen
+	+clr
+	.aside
+		width: 270px
+		float: left
+
+	.propose
+		width: calc(100% - 300px)
+		float: right
+		+clr
+// ---------------------------------------------
+.catalog
+	position: relative
+	width: 270px
+	float: left
+	+r(800)
+		width: 70px
+		+tr(.4s)
+		&:hover
+			.catalog__title
+				opacity: 1
+				height: auto
+			+ .header__search
+				width: calc(100% - 300px)
+	&:hover
+		width: 270px
+		.catalog
+			&__header
+				background-color: $orange
+				&:after
+					+arr(10, 6, #fff, b)
+					+rotate(180)
+			&__title
+				color: #fff
+			&__nav
+				opacity: 1
+				transform: rotateX(0deg)
+		.burger
+			&:after,
+			&:before
+				border-color: #fff
+
+	&__header
+		position: relative
+		height: 46px
+		padding-left: 15px
+		border: 1px solid $orange
+		background-color: #FFF
+		cursor: pointer
+		+tr(.4s)
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			+try(-50%)
+			right: 20px
+			+arr(10, 6, $orange, b)
+			transform-origin: 50% 25%
+			+tr(.4s)
+
+	&__nav
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		background-color: #FFF
+		transform-origin: top center
+		opacity: 0
+		transform: rotateX(90deg)
+		+tr(.4s)
+
+	&__title
+		line-height: 46px
+		padding-left: 26px
+		text-transform: uppercase
+		font-size: 15px
+		color: $dark
+		+rb
+		+r(800)
+			opacity: 0
+			height: 0
+			overflow: hidden
+			transition: .4s .3s
+	&.catalog_static
+		.catalog
+			&__header
+				background-color: $orange
+				&:after
+					+arr(10, 6, $orange, b)
+					+rotate(0)
+			&__title
+				color: #fff
+			&__nav
+				opacity: 1
+				transform: rotateX(0deg)
+		.burger
+			&:after,
+			&:before
+				border-color: $brown
+
+//  --------------------------------------------
+.burger
+	display: inline-block
+	position: absolute
+	width: 15px
+	height: 12px
+	top: 50%
+	+try(-50%)
+	&:before
+		content: ''
+		position: absolute
+		width: 100%
+		top: 0
+		left: 0
+		height: 50%
+		border-top: 2px solid $orange
+		border-bottom: 1px solid $orange
+		+tr(.4s)
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		height: 50%
+		border-top: 1px solid $orange
+		border-bottom: 2px solid $orange
+		+tr(.4s)
+// ---------------------------------------------
+.menu
+	font-size: 0
+	border-bottom: 1px solid $gray
+	&__list
+		border-top: 1px solid $light
+		border-right: 1px solid $gray
+		border-left: 1px solid $gray
+		&:first-child
+			border-top: none
+		&.is_active,
+		&:hover
+			border-left: 1px solid $orange
+			// +tr(.4s)
+			.menu__link
+				color: $orange
+	&__link
+		display: block
+		font-size: 13px
+		line-height: 39px
+		padding-left: 15px
+		color: $dark
+		+tr(.4s)
+		+rm
+		+hover
+// -------------------------
+.mainSlider
+	margin-top: 30px
+	+clr
+	&__item
+		position: relative
+		height: 570px
+		overflow: hidden
+	&__img
+		+vcenter
+		min-width: 100%
+		min-height: 100%
+	&__content
+		position: absolute
+		top: 46%
+		left: 7%
+		transform: translate3d(0, -50%, 0)
+		&.mod_darkText
+			color: $dark
+			.title__biggest
+				color: $dark
+			.title__detail
+				color: $dark
+	.btn
+		margin-top: 46px
+// ---------------------------------------------
+.market
+	margin-top: 20px
+	display: flex
+	justify-content: space-between
+	+r(600)
+		flex-wrap: wrap
+	&__item
+		position: relative
+		width: 32%
+		height: 220px
+		overflow: hidden
+		+r(600)
+			width: 100%
+			margin-bottom: 20px
+		&:hover
+			.market__conteiner
+				top: 0
+	&__img
+		+vcenter
+		min-width: 100%
+		min-height: 100%
+
+	&__conteiner
+		text-align: center
+		position: absolute
+		top: 50%
+		bottom: 0
+		left: 0
+		right: 0
+		background-color: rgba(247, 64, 64, .6) //$orange
+		+tr(.8s)
+	&__desc
+		+vcenter
+		white-space: nowrap
+		font-size: 18px
+		color: #fff
+		+rm
+// ---------------------------------------------
+.search
+	width: 100%
+	&__field
+		position: relative
+		width: 100%
+		font-size: 0
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			+try(-50%)
+			left: 18px
+			+s(icon-lupa)
+			+r(500)
+				left: 8px
+		&:hover
+			.search__input
+				border-color: $orange
+			.btn_search
+				background-color: $brown
+		&.in_focus
+			.search__input
+				border-color: $orange
+			.btn_search
+				background-color: $orange
+
+	&__input
+		width: calc(100% - 140px)
+		height: 46px
+		border: 1px solid $gray
+		border-right: none
+		background-color: $light
+		padding-left: 50px
+		padding-right: 5px
+		outline: none
+		+placeholder
+			font-size: 15px
+			color: $dark
+			+rr
+		+r(500)
+			width: calc(100% - 70px)
+			padding-left: 30px
+	.btn
+		width: 140px
+		background-color: $dark
+		font-size: 16px
+		+rb
+		+tr(.4s)
+		+r(500)
+			width: 70px
+		&:hover &
+			background-color: $brown
+			~ .search__input
+				border: 2px solid red
+// ---------------------------------------------
+.purchased
+	position: relative
+	// float: left
+	width: 100%
+	height: auto
+	+clr
+
+	&__item
+		// display: inline-block
+		position: relative
+		background-color: $light
+		float: left
+		overflow: hidden
+		&:hover
+			.purchased__over
+				opacity: 1
+
+	&__img
+		max-width: 94%
+		position: absolute
+		bottom: 0
+		left: 50%
+		+trx(-50%)
+		user-select: none
+		pointer-events: none
+	&__content
+		position: absolute
+		top: 40px
+		right: 30px
+	&__strong
+		display: inline-block
+		position: relative
+		white-space: nowrap
+		font-size: 22px
+		color: $dark
+		+rr
+	&-sizer
+		width: 30%
+	&__over
+		opacity: 0
+		+coverdiv
+		background-color: rgba(0, 0, 0, .4)
+		text-align: center
+		pointer-events: none
+		+tr(.4s)
+		&_conteiner
+			+vcenter
+			color: #fff
+		p
+			font-size: 15px
+			line-height: 20px
+			color: #fff
+			white-space: nowrap
+			+rr
+		span
+			display: inline-block
+			vertical-align: sub
+			margin-left: 14px
+			line-height: 20px
+
+	&-01
+		width: calc(68% - 20px)
+		height: 300px
+		margin-bottom: 20px
+		+r(1000)
+			width: 100%
+		.purchased
+			&__content
+				top: 71px
+				right: 90px
+				+r(600)
+					top: auto
+					bottom: 40px
+					right: 20px
+			&__img
+				max-width: 80%
+				top: 10%
+				bottom: auto
+			&__strong
+				+r(600)
+					white-space: normal
+					width: 220px
+				&:after
+					content: ''
+					position: absolute
+					bottom: -17px
+					left: 0
+					width: 80px
+					height: 1px
+					background-color: $orange
+
+	&-02
+		width: 32%
+		height: 620px
+		margin-left: 20px
+		float: right
+		+r(600)
+			width: 100%
+			margin-left: 0
+			margin-bottom: 20px
+		.purchased
+			&__img
+				bottom: 0
+			&__content
+				top: 60px
+				right: 50%
+				+trx(50%)
+				text-align: center
+			&__strong
+				&:after
+					content: ''
+					position: absolute
+					bottom: -17px
+					left: 50%
+					+trx(-50%)
+					width: 80px
+					height: 1px
+					background-color: $orange
+
+	&-03
+		height: 300px
+		margin-bottom: 20px
+		width: calc(27% - 20px)
+		margin-right: 20px
+		+r(1000)
+			width: calc(68% - 20px)
+			margin-right: 0
+		+r(600)
+			width: 100%
+		.purchased
+			&__img
+				bottom: 6%
+			&__content
+				right: 50%
+				+trx(50%)
+				text-align: center
+			&__strong
+
+				&:after
+					content: ''
+					position: absolute
+					bottom: -17px
+					left: 50%
+					+trx(-50%)
+					width: 80px
+					height: 1px
+					background-color: $orange
+	&-04
+		width: calc(41% - 20px)
+		height: 300px
+		margin-bottom: 20px
+		+r(1000)
+			width: calc(68% - 20px)
+		+r(600)
+			width: 100%
+		.purchased
+			&__img
+				bottom: 0
+				max-height: 90%
+			&__content
+				top: auto
+				bottom: 60px
+				left: 40px
+			&__strong
+				&:after
+					content: ''
+					position: absolute
+					bottom: -17px
+					left: 0
+					width: 80px
+					height: 1px
+					background-color: $orange
+//
+
+.wobble-00
+	animation: wobble1 2s ease-in-out infinite
+.wobble-01
+	animation: wobble2 2s ease-in-out infinite
+.wobble-02
+	animation: wobble3 2s ease-in-out infinite
+
+
+@keyframes wobble1
+	16.65%
+		opacity: 0
+	49.95%
+		opacity: 1
+
+@keyframes wobble2
+	20.65%
+		opacity: 0
+	83.25%
+		opacity: 1
+@keyframes wobble3
+	40.65%
+		opacity: 0
+	100%
+		opacity: 1
+
+// ---------------------------------------------
+.details
+	position: relative
+	border-top: none
+	padding: 52px 4%
+	text-align: center
+	// overflow: hidden
+	margin-bottom: 115px
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 0
+		width: 100%
+		pointer-events: none
+		border-right: 1px solid $orange
+		border-left: 1px solid $orange
+		height: 0px
+		transition: 1s ease-in-out 0s
+	&:before
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 50%
+		width: 0
+		height: 1px
+		background-color: $orange
+		transition: 1s ease-in-out 0s//<--
+
+	&.is_active
+		&:after
+			height: calc(100% + 8px)
+			top: -8px
+		&:before
+			left: 0
+			width: 100%
+
+	.btn
+		position: absolute
+		bottom: -20px
+		left: 50%
+		+trx(-50%)
+		z-index: 5
+		outline: none
+		border: none
+		&:before,
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			bottom: 0
+			width: 20px
+			background-color: #FFF
+			z-index: -1
+			outline: none
+			border: none
+		&:after
+			left: -20px
+		&:before
+			right: -20px
+// ---------------------------------------------
+.company
+	// text-align: center
+	&__desc
+		text-align: center
+		font-size: 18px
+		line-height: 24px
+		margin-bottom: 30px
+		color: $dark
+		+rr
+// ---------------------------------------------
+.workers
+	width: 100%
+	display: flex
+	justify-content: space-between
+	+r(800)
+		flex-wrap: wrap
+.worker
+	display: inline-block
+	position: relative
+	height: 200px
+	margin-top: 10px
+	margin-bottom: 40px
+	width: calc(25% - 15px)
+	overflow: hidden
+	+r(800)
+		width: 48%
+		margin: 10px 0 10px
+	+r(600)
+		width: 100%
+	&:before
+		content: ''
+		+coverdiv
+		background-color: rgba(0, 0, 0, .5)
+		z-index: -2
+		opacity: 0
+		+tr(.4s)
+	&:after
+		content: ''
+		+vcenter
+		+s(icon-plus)
+		z-index: -5
+		opacity: 0
+		+tr(.4s)
+	&:hover
+		&:before
+			opacity: 1
+			z-index: 2
+		&:after
+			opacity: 1
+			z-index: 5
+	&__img
+		+vcenter
+		min-width: 100%
+		min-height: 100%
+// ---------------------------------------------
+.perfect
+	@extend .workers
+	&__item
+		width: calc(25% - 15px)
+		+r(800)
+			width: 48%
+			margin: 10px 0 10px
+		+r(600)
+			width: 100%
+	&__circle
+		position: relative
+		display: inline-block
+		width: 60px
+		height: 60px
+		background-color: $orange
+		border-radius: 100%
+		margin-bottom: 30px
+		i
+			+vcenter
+	&__title
+		font-size: 22px
+		color: $dark
+		margin-bottom: 25px
+		+rm
+		+ .perfect__text
+			margin-top: 0
+	&__text
+		padding-top: 25px
+		position: relative
+		margin-top: 30px
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 140px
+			height: 1px
+			background-color: $orange
+	&__desc
+		font-size: 15px
+		color: $dark
+		+rr
+// -------------------------------------------
+.events
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	+ .btn
+		margin: 20px auto 0
+
+.event
+	display: inline-block
+	width: calc(25% - 15px)
+	border: 1px solid $gray
+	margin-bottom: 20px
+	position: relative
+	z-index: 2
+	+tr(.6s)
+	+r(800)
+		width: 48%
+		margin: 10px 0 10px
+	+r(600)
+		width: 100%
+	&:after
+		content: ''
+		+coverdiv
+		+tr(.4s)
+
+	&:hover
+		border-color: $orange
+		z-index: 10
+		box-shadow: 0 0 10px 0px rgba(247, 64, 64, .5)
+		// &:after
+		// 	box-shadow: 0 0 10px 0px rgba(247, 64, 64, .5)
+		.event__footer
+			background-color: $orange
+			time
+				color: #fff
+	&__text
+		padding: 40px 40px 30px 30px
+		text-align: left
+	&__title
+		position: relative
+		padding-top: 25px
+		font-size: 18px
+		color: $dark
+		margin-bottom: 25px
+		+rr
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100px
+			height: 1px
+			background-color: $orange
+	&__desc
+		font-size: 13px
+		line-height: 1.2
+		color: #b6bdbf
+		+rr
+		+limitLines( $maxLinesPortrait: 4, $maxLinesLandscape: 4, $fgCol: #fff, $bgCol: #fff, $lineHeight: 1.2)
+	&__footer
+		position: relative
+		display: flex
+		align-items: center
+		padding-left: 32px
+		height: 50px
+		background-color: $light
+		+tr(.6s)
+		time
+			margin-left: 6px
+			font-size: 14px
+			color: $dark
+			+rr
+// -------------------------------------------------------
+.breadcrumbs
+	font-size: 0
+	height: 60px
+	display: flex
+	align-items: center
+	border-bottom: 1px solid $gray
+	+r(600)
+		display: none
+	li
+		margin-right: 30px
+		color: $dark
+		font-size: 13px
+		+rr
+		a
+			position: relative
+			color: #bababf
+			font-size: 13px
+			+rr
+			&:after
+				content: '\2192'
+				position: absolute
+				top: 50%
+				right: -20px
+				+try(-50%)
+				color: #bababf
+				font-size: 13px
+				+rr
+// -------------------------------------------------------
+.partner
+	// margin-top: 65px
+	display: flex
+	align-items: center
+	justify-content: space-around
+	flex-wrap: wrap
+	margin-bottom: 40px
+	&__link
+		display: inline-block
+		margin-top: 25px
+		+tr(.4s)
+		&:hover
+			opacity: .8
+// -------------------------------------------------------
+.exclusive
+	position: relative
+	height: 220px
+	overflow: hidden
+	+r(480)
+		height: 300px
+	&:after
+		content: ''
+		+coverdiv
+		background-color: rgba(65, 74, 77, .7)
+	&__img
+		+vcenter
+		min-width: 100%
+		min-height: 100%
+	&__content
+		width: 80%
+		+vcenter
+		// display: inline-block
+		text-align: center
+		padding-bottom: 30px
+		z-index: 10
+		&:after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 50%
+			+trx(-50%)
+			width: 160px
+			height: 1px
+			background-color: $orange
+	&__desc
+		// white-space: nowrap
+		font-size: 22px
+		line-height: 26px
+		color: #fff
+		+rr
+//  --------------------------------------------------
+.preview
+	+clr
+	&__detail
+		width: 49%
+		float: left
+		margin-bottom: 35px
+		+r(800)
+			width: 100%
+	&__description
+		padding-bottom: 20px
+		border-bottom: 1px solid $gray
+	.title__detail
+		color: $dark
+		letter-spacing: .025em
+		margin-top: 30px
+		text-transform: uppercase
+	+r(800)
+		+ .preview
+			margin-top: 30px
+
+.previewSlider
+	width: 49%
+	float: left
+	+r(800)
+		width: 100%
+.previewSliderWide,
+.popupSliderWide
+	margin-bottom: 5px
+	&__item
+		position: relative
+		width: 100%
+		height: 400px
+		background-color: $light
+		outline: none
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate3d(-50%, -50%, 0)
+			min-width: 100%
+			min-height: 100%
+
+.previewSliderSmall,
+.popupSliderSmall
+	// background-color: red
+
+	&__item
+		margin-right: 20px
+		outline: none
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate3d(-50%, -50%, 0)
+			// max-width: none !important
+			min-height: 100%
+			min-width: 100%
+		&_wrap
+			position: relative
+			height: 120px
+			background-color: $light
+			overflow: hidden
+			// border: 1px solid $n
+
+.popupSliderWide
+	margin-bottom: 5px
+	&__item
+		position: relative
+		width: 100%
+		height: 400px
+		background-color: $light
+		outline: none
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate3d(-50%, -50%, 0)
+			min-width: 100%
+			min-height: 100%
+
+.popupSliderSmall
+	&__item
+		position: relative
+		margin-right: 20px
+		outline: none
+		position: relative
+		height: 120px
+		background-color: $n
+		overflow: hidden
+		opacity: .4
+		border: 1px solid $n
+		+tr(.4s)
+		&:hover
+			opacity: .8
+			border: 1px solid $orange
+			box-shadow: 0 0 10px 0 rgba(247, 64, 64, .6)
+			transform: translate3d(0,0,0)
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate3d(-50%, -50%, 0)
+			// max-width: none !important
+			min-height: 100%
+			min-width: 100%
+
+// ------------------------------------------------------------
+.description
+	width: 47%
+	float: right
+	+r(800)
+		width: 100%
+		margin-top: 30px
+	&__model
+		font-size: 17px
+		color: #b6bdbf
+		margin-bottom: 30px
+		+rr
+		strong
+			display: inline-block
+			margin-left: 10px
+			font-size: 17px
+			color: #b6bdbf
+			+rb
+	&__title
+		font-size: 22px
+		letter-spacing: .025em
+		line-height: 34px
+		color: $dark
+		margin-bottom: 35px
+		+rb
+	&__header
+		border-bottom: 1px solid $gray
+		margin-bottom: 30px
+	&__time
+		position: relative
+		padding-left: 24px
+		&:before
+			content: ''
+			position: absolute
+			top: 2px
+			left: 0
+			+s(icon-time)
+	&__content
+		height: 99px
+		overflow: hidden
+		+tr(.6s)
+		&.is_visible
+			height: auto
+	&__toogler
+		display: block
+		position: relative
+		overflow: hidden
+		color: $orange
+		margin-top: 30px
+		font-size: 15px
+		+rr
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			height: 1px
+			width: 100%
+			// top: -1px
+			border-top: 1px solid #d4d8d9
+			left: 155px
+			// left: 430px
+			// margin-left: -50%
+	&__desc
+		font-size: 15px
+		line-height: 20px
+		margin-bottom: 20px
+		color: $dark
+		+rr
+	&__strong
+		+rb
+	&__submit
+		margin-top: 50px
+		display: inline-block
+	&__list
+		font-size: 0
+		margin-bottom: 20px
+	&__item
+		position: relative
+		font-size: 15px
+		line-height: 20px
+		margin-bottom: 10px
+		padding-left: 30px
+		color: $dark
+		+rr
+		&:after
+			content: ''
+			position: absolute
+			top: 6px
+			left: 0
+			width: 10px
+			height: 10px
+			border: 1px solid $orange
+			border-radius: 100%
+
+	&__table
+		width: 100%
+		margin-top: 25px
+		tr
+			> td
+				// width: 56%
+				padding-left: 18px
+		tr:nth-child(odd)
+			background-color: $light
+		td
+			font-size: 14px
+			line-height: 31px
+			color: $dark
+			+rr
+	&_small
+		.description__content
+			position: relative
+			height: 58px
+			&:after
+				content: ''
+				+coverdiv
+				pointer-events: none
+				box-shadow: inset 0 -34px 30px -15px rgba(255, 255, 255, 1)
+				z-index: 5
+				+tr(.4s)
+		.is_visible
+			height: auto
+			&:after
+				box-shadow: inset 0 -34px 30px -39px rgba(255, 255, 255, 1)
+				z-index: 5
+// -----------------------------------------------------------
+
+.product
+	margin: 30px 0 20px
+	border-left: 1px solid $gray
+	+clr
+	&__item
+		position: relative
+		font-size: 0
+		display: block
+		width: 25%
+		// border-top: 1px solid $gray
+		background-color: #FFF
+		outline: none
+		float: left
+		+tr(.4s)
+		+r(800)
+			width: 50%
+		+r(500)
+			width: 100%
+		&:hover
+			border-color: $orange
+			box-shadow: 0 0 15px 0 rgba(247, 64, 64, .5)
+			z-index: 10
+			.product__footer
+				background-color: $orange
+				&_desc
+					color: #fff
+	&__pic
+		position: relative
+		height: 244px
+		border-right: 1px solid $gray
+		border-top: 1px solid $gray
+		// border-left: 1px solid $gray
+	&__img
+		+vcenter
+		max-width: 80% !important
+		max-height: 80%
+	&__content
+		// height: 78px
+		overflow: hidden
+		padding: 16px
+		// margin-bottom: 16px
+		text-align: left
+		border-top: 1px solid $light
+		border-right: 1px solid $gray
+		// border-left: 1px solid $gray
+
+	&__box
+		height: 66px
+		// margin-bottom: 16px
+		overflow: hidden
+	&__desc
+		font-size: 13px
+		line-height: 1.3
+		color: $dark
+		+rr
+	&__title
+		font-size: 15px
+		position: relative
+		line-height: 1.3
+		color: $dark
+		padding-bottom: 15px
+		margin-bottom: 15px
+		+rb
+		&:after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 80%
+			height: 1px
+			background-color: $light
+	&__footer
+		background-color: $light
+		border-right: 1px solid $gray
+		// border-left: 1px solid $gray
+		border-bottom: 1px solid $gray
+		+tr(.4s)
+		&_desc
+			padding: 14px 17px
+			text-align: left
+			line-height: .9
+			text-transform: uppercase
+			font-size: 14px
+			color: $dark
+			+rr
+		&_serial
+			display: inline-block
+			padding-right: 7px
+			border-right: 1px solid #c9cccd
+			margin-right: 7px
+
+	&_list &
+		&__item
+			width: 100%
+			height: 130px
+			overflow: hidden
+			border-bottom: 1px solid $n
+			border-top: 1px solid $gray
+			+clr
+			+r(800)
+				width: 50%
+				height: auto
+				border: 1px solid $gray
+			+r(600)
+				width: 100%
+			&:last-child
+				border: 1px solid $gray
+			&:hover
+				border: 1px solid $orange
+				.product__footer
+					border-right: 1px solid $orange
+		&__pic
+			display: inline-block
+			height: 130px
+			width: 150px
+			margin-right: 20px
+			float: left
+			border-top: none
+			+r(800)
+				width: 100%
+				border-right: none
+		&__content
+			// float: left
+			display: inline-block
+			width: calc(100% - 370px)
+			height: 130px
+			padding: 16px 27px 16px 0
+			margin: 0
+			border: none
+			+r(800)
+				width: 100%
+				height: auto
+				padding: 16px 0
+		&__title
+			+r(800)
+				padding: 0 27px 10px
+				&:after
+					width: 100%
+		&__desc
+			color: #b6bdbf
+			+r(800)
+				padding: 0 27px
+		&__footer
+			display: flex
+			align-items: center
+			width: 200px
+			float: right
+			height: 130px
+			+r(800)
+				width: 100%
+				height: 60px
+				border: none
+			&_desc
+				white-space: nowrap
+// -------------------------------------------------------
+
+.selectors
+	font-size: 0
+	display: flex
+	justify-content: space-between
+	width: 100%
+	max-width: 940px
+	+r(950)
+		text-align: center
+		flex-wrap: wrap
+		justify-content: space-around
+
+.filter
+	display: flex
+	align-items: center
+	justify-content: space-between
+	height: 120px
+	background-color: $light
+	padding: 25px 30px
+	margin-top: 45px
+	+r(640)
+		flex-wrap: wrap
+		height: auto
+	.select
+		width: 100%
+		border-bottom: 1px solid $n
+		&__row
+			padding: 10px
+			line-height: 1.2
+	.check
+		white-space: normal
+
+		span
+			display: inline-block
+			white-space: normal
+	&__using
+		width: 34%
+		display: inline-block
+		vertical-align: top
+		margin-right: 15px
+		+r(640)
+			width: 100%
+			margin: 0px 0 20px
+	&__items
+		width: 70px
+		display: inline-block
+		vertical-align: top
+		margin-right: 15px
+	&__show
+		display: inline-block
+		vertical-align: top
+		width: 78px
+		// height: 40px
+	&__select
+		width: 78px
+		height: 36px
+	&__link
+		position: relative
+		display: inline-block
+		width: 36px
+		height: 36px
+		background-color: #FFF
+		+tr(.4s)
+		&:hover,
+		&.is_active
+			background-color: $dark
+
+	&_tile
+		&:before
+			content: ''
+			+vcenter
+			+s(icon-tile)
+		&:hover,
+		&.is_active
+			&:before
+				+s(icon-tile-active)
+	&_list
+		&:before
+			content: ''
+			+vcenter
+			+s(icon-list)
+		&:hover,
+		&.is_active
+			&:before
+				+s(icon-list-active)
+	&__title
+		font-size: 14px
+		color: #babebf
+
+	.filter__list
+		position: absolute
+		// display: none
+		left: 0px
+		right: 0px
+		// top: 35px
+		border-radius: 0 0 3px 3px
+
+		background: #fff
+		top: 37px
+		display: block
+		overflow: hidden
+		transform-origin: top center
+		transform: rotateX(90deg)
+		z-index: -1
+		padding: 10px 0
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
+		&:before
+			content: ''
+			+coverdiv
+			z-index: -5
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
+	.select.is-active
+		border-bottom: 1px solid $light
+		.filter__list
+			transform: rotateX(0deg)
+
+.check
+	position: relative
+	display: inline-block
+	input
+		position: absolute
+		top: 2px
+		left: 0
+		z-index: 2
+		opacity: 0
+		&:checked
+			~ span
+				user-select: none
+				&:before
+					background-color: $orange
+				&:after
+					content: ""
+					position: absolute
+					bottom: 2px
+					left: 4px
+					+s(icon-selector-checked)
+		&:disabled
+			~ span
+				opacity: 1
+	span
+		position: relative
+		padding-left: 28px
+		left: 0
+		top: 0
+		font-size: 14px
+		color: $dark
+		cursor: pointer
+		user-select: none
+		+rr
+		z-index: 15
+		&:before
+			content: ""
+			position: absolute
+			top: -1px
+			left: 0
+			width: 18px
+			height: 18px
+			background-color: #fff
+			border: 1px solid #e6e6e6
+			cursor: pointer
+			+tr(.4s)
+
+#map
+	position: relative
+	width: 60%
+	height: 420px
+	float: left
+	+r(800)
+		width: 100%
+
+.contact
+	+clr
+	+r(800)
+		+ .section
+			margin-top: 0
+	&__location
+		width: 37%
+		float: right
+		+r(800)
+			width: 100%
+			margin-top: 30px
+	&__item
+		height: 150px
+		position: relative
+		padding: 25px 0px 0 30px
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 30px
+			width: 120px
+			height: 1px
+			background-color: $orange
+	&__desc
+		font-size: 17px
+		line-height: 24px
+		color: $dark
+		+rr
+		a
+			font-size: 17px
+			line-height: 24px
+			color: $dark
+			+rr
+			+tr(.4s)
+			&:hover
+				color: $orange
+	&_adress
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			top: 6px
+			left: -30px
+			+s(icon-fly)
+	&_tel
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			top: 6px
+			left: -30px
+			+s(icon-phone)
+	&_mail
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			top: 6px
+			left: -30px
+			+s(icon-mail)
+
+.send
+	padding: 60px 0 40px
+	margin-bottom: 20px
+	text-align: center
+	background-color: $light
+	&__title
+		font-size: 18px
+		letter-spacing: .025em
+		margin-bottom: 30px
+		color: $dark
+		text-transform: uppercase
+		+rb
+	&__layout
+		width: 94%
+		max-width: 620px
+		margin: 0 auto
+	&__desc
+		font-size: 15px
+		line-height: 20px
+		color: #b6bdbf
+	&__form
+		margin-top: 35px
+	&__fields
+		text-align: left
+	&__fieldset
+		position: relative
+		width: 100%
+		height: 40px
+		background-color: #FFF
+		margin-bottom: 20px
+		&.mod_half
+			width: 49%
+		&.input--filled
+			.send__label
+				font-size: 10px
+				top: 20%
+			.send__input
+				padding-top: 15px
+	&__row
+		font-size: 0
+		display: flex
+		justify-content: space-between
+	&__input
+		width: 100%
+		height: 40px
+		border: 1px solid $gray
+		background-color: #FFF
+		outline: none
+		padding: 0 20px
+		font-size: 15px
+		color: $dark
+		+rr
+		+tr(.4s)
+		&.has-error
+			box-shadow: 0 0 4px 0 rgba(247, 64, 64, .6)
+		+ .has-error
+			font-size: 10px
+			color: $orange
+			+rr
+	&__label
+		position: absolute
+		top: 50%
+		+try(-50%)
+		left: 20px
+		font-size: 15px
+		color: $gray
+		pointer-events: none
+		+rr
+		+tr(.4s)
+	&__message
+		width: 100%
+		height: 160px
+		border: 1px solid $gray
+		outline: none
+		padding: 15px 20px
+		resize: none
+		font-size: 15px
+		color: $dark
+		+rr
+		+placeholder
+			font-size: 15px
+			color: $gray
+			+rr
+		&.has-error
+			box-shadow: 0 0 4px 0 rgba(247, 64, 64, .6)
+		+ .has-error
+			font-size: 10px
+			color: $orange
+			+rr
+	.btn
+		margin-top: 40px
+// -------------------------------------------------------
+
+.blank
+	width: 100%
+	margin-top: 30px
+	&__box
+		width: 100%
+		display: flex
+		justify-content: space-between
+		+r(650)
+			flex-wrap: wrap
+	&__conteiner
+		position: relative
+		margin-top: 30px
+		text-align: left
+		+r(650)
+			margin-top: 10px
+	&__fieldset
+		position: relative
+		width: 48%
+		height: 40px
+		margin-bottom: 20px
+		text-align: left
+		+r(650)
+			width: 100%
+		&.input--filled
+			.send__label
+				font-size: 10px
+				top: 20%
+			.send__input
+				padding-top: 15px
+	&__input
+		@extend .send__input
+		&.has-error
+			box-shadow: 0 0 4px 0 rgba(247, 64, 64, .6)
+		+ .has-error
+			font-size: 10px
+			color: $orange
+			+rr
+	&__label
+		@extend .send__label
+	.select
+		width: 100%
+	.send__desc
+		margin-bottom: 7px
+
+// -------------------------------------------------------
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background-color: rgba(0, 0, 0, .6)
+	z-index: 2000
+	transform-origin: top center
+	transform: rotateX(90deg)
+	+tr(.4s)
+	&.is_visible
+		transform: rotateX(0deg)
+		// z-index: 2000
+
+	&__content
+		max-width: 720px
+		max-height: 540px
+		width: 90%
+		padding: 0 10px
+		+vcenter
+		+r(600)
+			width: 100%
+			padding: 0 20px
+	.previewSlider
+		width: 100%
+		max-width: 100%
+		max-height: 100%
+
+	&__wrap
+		max-width: 580px
+		width: 90%
+		padding: 40px
+		background-color: $light
+		margin: 0 auto
+		text-align: center
+		+r(600)
+			width: 100%
+			padding: 30px 15px
+	.send__title
+		position: relative
+		text-transform: uppercase
+		text-align: center
+		overflow: hidden
+		margin-bottom: 30px
+		+rb
+		&:before,
+		&:after
+			content: ''
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			width: 50%
+			height: 1px
+			top: -1px
+			border-top: 1px solid #d4d8d9
+		&:before,
+			right: 40px
+			margin-left: -50%
+		&:after
+			left: 40px
+			margin-right: -50%
+	.btn
+		display: inline-block
+		margin-top: 30px
+
+.popupSlider
+	width: 100%
+	padding: 0 35px
+.popupSliderWide__item
+	max-height: 60vh
+	+rh(660)
+		max-height: 56vh
+.popupSliderSmall__item
+	max-height: 30vh
+	+rh(660)
+		max-height: 14vh
