@@ -136,28 +136,66 @@
 		border-left: 1px solid $gray
 		&:first-child
 			border-top: none
+		&.has_sub
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				top: 15px
+				right: 10px
+				+arr(5, 8, $dark, l)
+				+tr(.4s)
 		&.is_active,
 		&:hover
 			border-left: 1px solid $orange
-			// +tr(.4s)
+			+tr(.4s)
+			&:after
+				transform-origin: center center
+				+rotate(-90)
+				// +arr(8, 5, $orange, b)
 			.menu__link
 				color: $orange
+			.submenu
+				&__list
+					border-top: 1px solid $light
+				&__link
+					font-size: 12px
+					padding: 10px 0 10px 30px
 	&__link
 		display: block
 		font-size: 13px
-		line-height: 39px
-		padding-left: 15px
+		padding: 11px 0 10px 15px
 		color: $dark
 		+tr(.4s)
 		+rm
 		+hover
+// --------------------------
+.submenu
+	position: relative
+	font-size: 0
+	// &__list
+
+	&__link
+		display: block
+		font-size: 0
+		padding: 0
+		color: $dark
+		+tr(.4s)
+		+rm
+		&:visited
+			color: $orange
+		&:hover
+			color: $orange
+			background-color: #f6f6f6
+
+
 // -------------------------
 .mainSlider
 	margin-top: 30px
 	+clr
 	&__item
 		position: relative
-		height: 570px
+		height: 506px
 		overflow: hidden
 	&__img
 		+vcenter
@@ -783,14 +821,34 @@
 .preview
 	+clr
 	&__detail
-		width: 49%
-		float: left
 		margin-bottom: 35px
+		+clr
 		+r(800)
 			width: 100%
+			margin-bottom: 0
+	&__report
+		width: 50%
+		float: left
+		padding-right: 20px
+		border-right: 1px solid $gray
+		+r(800)
+			width: 100%
+			float: none
+			border: none
+			margin-bottom: 20px
+			padding: 0
+
 	&__description
+		width: calc(50% - 20px)
+		float: right
 		padding-bottom: 20px
-		border-bottom: 1px solid $gray
+		+r(800)
+			width: 100%
+			float: none
+			border: none
+			// margin-bottom: 20px
+			padding: 0
+
 	.title__detail
 		color: $dark
 		letter-spacing: .025em
@@ -995,6 +1053,8 @@
 			color: $dark
 			+rr
 	&_small
+		clear: both
+		// margin-top: 30px
 		.description__content
 			position: relative
 			height: 58px
@@ -1038,6 +1098,16 @@
 				background-color: $orange
 				&_desc
 					color: #fff
+	&.mod_tile
+		// border: none
+	&.mod_tile &
+		&__item
+			outline: 1px solid $n
+			&:hover
+				outline: 1px solid $orange
+				.product__footer
+					border-color: $orange
+
 	&__pic
 		position: relative
 		height: 244px
@@ -1108,7 +1178,7 @@
 			width: 100%
 			height: 130px
 			overflow: hidden
-			border-bottom: 1px solid $n
+			border: 1px solid $n
 			border-top: 1px solid $gray
 			+clr
 			+r(800)
@@ -1300,7 +1370,7 @@
 				&:after
 					content: ""
 					position: absolute
-					bottom: 2px
+					bottom: 4px
 					left: 4px
 					+s(icon-selector-checked)
 		&:disabled

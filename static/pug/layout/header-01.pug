@@ -1,4 +1,3 @@
-- var list = ['Головки светофорные', 'Светофоры карликовые', 'Светофоры консольные', 'Системы светофорные', 'Светофоры мачтовые', 'Указатели световые светодиодные', 'Звуковые сигнальные устройства', 'Переездное оборудование', 'Устройства СЦБ для метро', 'Светильники светодиодные', 'Стрелочные электроприводы', 'Перемычки и соединители для СЦБ', 'Бортовые источники питания', 'Дроссель-трансформаторы', 'Буферные фонари', 'Защитные устройства', 'Ящики путевые', 'Муфты кабельные', 'Оборудование СЦБ', 'Аппаратура связи', 'Изоляция для ж/д путей'];
 
 header.header(data-aos="flip-down", data-aos-delay="300")
 	.header__top
@@ -39,9 +38,66 @@ header.header(data-aos="flip-down", data-aos-delay="300")
 				h6.catalog__title КАТАЛОГ ПРОДУКЦИИ
 			nav.catalog__nav
 				ul.menu
-					each link in list
-						li.menu__list
-							a(href="#").menu__link #{link}
+					li.menu__list.has_sub
+						a(href="#").menu__link Головки светофорные
+						ul.submenu
+							li.submenu__list
+								a(href="#").submenu__link link1
+							li.submenu__list
+								a(href="#").submenu__link link1link1 link1
+							li.submenu__list
+								a(href="#").submenu__link link1 link1
+							li.submenu__list
+								a(href="#").submenu__link link1 link1
+					li.menu__list
+						a(href="#").menu__link Светофоры карликовые
+					li.menu__list.has_sub
+						a(href="#").menu__link Светофоры консольные
+						ul.submenu
+							li.submenu__list
+								a(href="#").submenu__link link1
+							li.submenu__list
+								a(href="#").submenu__link link1link1 link1
+							li.submenu__list
+								a(href="#").submenu__link link1 link1
+							li.submenu__list
+								a(href="#").submenu__link link1 link1
+					li.menu__list
+						a(href="#").menu__link Системы светофорные
+					li.menu__list
+						a(href="#").menu__link Светофоры мачтовые
+					li.menu__list
+						a(href="#").menu__link Указатели световые светодиодные
+					li.menu__list
+						a(href="#").menu__link Звуковые сигнальные устройства
+					li.menu__list
+						a(href="#").menu__link Переездное оборудование
+					li.menu__list
+						a(href="#").menu__link Устройства СЦБ для метро
+					li.menu__list
+						a(href="#").menu__link Светильники светодиодные
+					li.menu__list
+						a(href="#").menu__link Стрелочные электроприводы
+					li.menu__list
+						a(href="#").menu__link Перемычки и соединители для СЦБ
+					li.menu__list
+						a(href="#").menu__link Бортовые источники питания
+					li.menu__list
+						a(href="#").menu__link Дроссель-трансформаторы
+					li.menu__list
+						a(href="#").menu__link Буферные фонари
+					li.menu__list
+						a(href="#").menu__link Защитные устройства
+					li.menu__list
+						a(href="#").menu__link Ящики путевые
+					li.menu__list
+						a(href="#").menu__link Муфты кабельные
+					li.menu__list
+						a(href="#").menu__link Оборудование СЦБ
+					li.menu__list
+						a(href="#").menu__link Аппаратура связи
+					li.menu__list
+						a(href="#").menu__link Изоляция для ж/д путей
 		.header__search(data-aos="zoom-in", data-aos-delay="400")
 			form(action="/", method="POST", autocomplete="off").search
 				fieldset.search__field
