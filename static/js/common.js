@@ -28,13 +28,14 @@ $(document).ready(function() {
 		$('.productSlider').slick({
 			infinite: true,
 			slidesToShow: 5,
-			slidesToScroll: 5,
+			// slidesToScroll: 5,//
+			centerMode: true,
 			dots: true,
 			responsive: [{
 				breakpoint: 1140,
 				settings: {
 					slidesToShow: 3,
-					slidesToScroll: 3
+					// slidesToScroll: 3
 				}
 			}, {
 				breakpoint: 650,
@@ -136,6 +137,7 @@ $(document).ready(function() {
 
 	$('.description__toogler').on('click', function(){
 		$(this).siblings('.description__content').toggleClass('is_visible');
+		$(this).toggleClass('is_active');
 		return false;
 	});
 

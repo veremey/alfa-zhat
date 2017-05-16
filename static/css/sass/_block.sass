@@ -827,7 +827,8 @@
 			width: 100%
 			margin-bottom: 0
 	&__report
-		width: 50%
+		// width: 50%
+		width: 51%
 		float: left
 		padding-right: 20px
 		border-right: 1px solid $gray
@@ -839,7 +840,8 @@
 			padding: 0
 
 	&__description
-		width: calc(50% - 20px)
+		// width: calc(50% - 20px)
+		width: 47%
 		float: right
 		padding-bottom: 20px
 		+r(800)
@@ -1006,6 +1008,9 @@
 			left: 155px
 			// left: 430px
 			// margin-left: -50%
+		&.is_active
+			.icon-bird
+				+rotate(180)
 	&__desc
 		font-size: 15px
 		line-height: 20px
@@ -1256,7 +1261,7 @@
 	height: 120px
 	background-color: $light
 	padding: 25px 30px
-	margin-top: 45px
+	margin-top: 30px
 	+r(640)
 		flex-wrap: wrap
 		height: auto
