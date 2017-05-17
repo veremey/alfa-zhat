@@ -28,14 +28,14 @@ $(document).ready(function() {
 		$('.productSlider').slick({
 			infinite: true,
 			slidesToShow: 5,
-			// slidesToScroll: 5,//
-			centerMode: true,
+			slidesToScroll: 5,//
+			// centerMode: true,
 			dots: true,
 			responsive: [{
 				breakpoint: 1140,
 				settings: {
 					slidesToShow: 3,
-					// slidesToScroll: 3
+					slidesToScroll: 3
 				}
 			}, {
 				breakpoint: 650,
