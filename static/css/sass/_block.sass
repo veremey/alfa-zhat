@@ -1080,6 +1080,8 @@
 	margin: 30px 0 20px
 	border-left: 1px solid $gray
 	+clr
+	&_list
+		border-left: none
 	&__item
 		position: relative
 		font-size: 0
@@ -1108,8 +1110,11 @@
 				border-color: $orange
 				&_desc
 					color: #fff
+		// &:first-of-type
+		// 	.product__pic
+
 	&.mod_tile
-		// border: none
+		border: 1px solid $gray
 	&.mod_tile &
 		&__item
 			// outline: 1px solid $n
@@ -1117,6 +1122,8 @@
 				// outline: 1px solid $orange
 				.product__footer
 					border-color: $orange
+		&__content
+			border-top: 1px solid $gray
 
 	&__pic
 		position: relative
@@ -1217,6 +1224,7 @@
 			+r(800)
 				width: 100%
 				border-right: none
+				border-left: none
 		&__content
 			// float: left
 			display: inline-block
@@ -1225,6 +1233,9 @@
 			padding: 16px 27px 16px 0
 			margin: 0
 			border: none
+			&:before
+				content: none
+
 			+r(800)
 				width: 100%
 				height: auto

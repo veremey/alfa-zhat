@@ -171,7 +171,7 @@ function removeAside () {
 			'width' : '100%'
 		});
 	} else {
-		if($('.catalog').is(!'.simple')){
+		if($('.catalog').is('.simple') == false){
 
 			$('.catalog').addClass('catalog_static');
 			$('.propose').css({
