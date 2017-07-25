@@ -14,7 +14,6 @@ $(document).ready(function() {
 
 	});
 
-
 	$('.menu__list').on('click', function() {
 		$('.menu__list').removeClass('is_active');
 		$(this).addClass('is_active');
@@ -149,7 +148,7 @@ $(document).ready(function() {
 
 	$('.btn_menu').on('click', function() {
 		$(this).toggleClass('is_active');
-		$(this).siblings('.info').toggleClass('is_visible');
+		$(this).siblings('.info').toggleClass('is_visible').find('.info__wrap').toggleClass('is_visible');
 	});
 
 

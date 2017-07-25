@@ -17,26 +17,48 @@
 		+clr
 		+r(800)
 			width: calc(100% - 90px)
-	.info
+	// .info
 		+r(800)
 			display: none
-			transform-origin: top center
+			transform-origin: left center
 			transform: rotateY(90deg)
 			width: 0
-			+tr(.4s)
+			transition: width 1s
 			&.is_visible
-				display: flex
-				transform: rotateY(00deg)
+				display: block
+				transform: rotateY(0deg)
 				position: absolute
 				top: 0
-				left: -40px
-				width: 100vw
+				left: -20px
+				// width: 100vw
+				width: calc(100% + 40px)
 				height: 100vh
 				background-color: rgba(0, 0, 0, .9)
 				z-index: 2000
-				flex-direction: column
-				padding: 20%
-				justify-content: flex-start
+				// +tr(1s)
+				// .info__wrap
+				// 	left: 0
+				// 	transition: left 1s linear 2s
+			&__wrap
+				+r(800)
+					display: flex
+					transform: rotateY(00deg)
+					position: absolute
+					top: 0
+					left: 0px
+					margin-left: -1000px
+					width: 100%
+					height: 100vh
+					// background-color: rgba(0, 0, 0, .9)
+					z-index: 2000
+					flex-direction: column
+					padding: 20%
+					justify-content: flex-start
+					+tr(1s)
+					&.is_visible
+						margin-left: 0
+						+tr(1s)
+						// transition: left 1s linear
 	.select
 		+r(800)
 			display: none
@@ -70,6 +92,42 @@
 	align-items: center
 	justify-content: space-between
 	flex-wrap: wrap
+	+r(800)
+		position: absolute
+		top: 0
+		left: -20px
+		height: 100vh
+		background-color: rgba(0, 0, 0, .9)
+		width: 0
+		transform-origin: left center
+		transform: rotateY(90deg)
+		z-index: 2000
+		+tr(.3s)
+		&.is_visible
+			transform: rotateY(0deg)
+			width: calc(100% + 40px)
+			.info__wrap
+				margin-left: 0
+	&__wrap
+		width: 100%
+		height: 118px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+		transition: margin .5s ease-in
+		+r(800)
+			display: flex
+			position: absolute
+			top: 0
+			left: 0px
+			margin-left: -1000px
+			width: 100%
+			height: 100vh
+			z-index: 2000
+			flex-direction: column
+			padding: 20%
+			justify-content: flex-start
 
 .guide
 	display: flex
@@ -135,7 +193,6 @@
 		+r(800)
 			color: #fff
 
-
 .select
 	position: relative
 	display: inline-block
@@ -152,21 +209,22 @@
 		top: 50%
 		right: 8px
 		transform: translateY(-50%)
-		transform-origin: 50% 25% // 50% 20%
-		+arr(9, 5, $gray, b)
+		transform-origin: 50% 50% // 50% 20%
+		+arr(10, 5, $gray, b)
 		+tr(.4s 0s)
 	&:hover
+		// z-index: 1000
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
+		// .select
+		// 	&__list
+		// 		display: block
+	&.is-active
 		z-index: 1000
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
 		&:after
+			top: 45%
+			right: 10px
 			+rotate(180)
-		.select
-			&__text
-				&:before
-					box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
-			&__list
-				display: block
-				// z-index: 900
-
 	&__text
 		position: relative
 		height: 36px
@@ -183,17 +241,16 @@
 		-moz-user-select: none
 		-ms-user-select: none
 		user-select: none
-		&:before
-			content: ''
-			+coverdiv
-			z-index: -5
+		// &:before
+		// 	content: ''
+		// 	+coverdiv
+		// 	z-index: -5
 			// box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2)
 		span
 			font-size: 15px
 			color: $dark
 			+box
 			+rr
-
 	&__list
 		position: absolute
 		display: none
@@ -201,7 +258,6 @@
 		right: 0px
 		top: 35px
 		border-radius: 0 0 3px 3px
-
 		background: #fff
 		&:before
 			content: ''
@@ -217,13 +273,13 @@
 		padding-left: 10px
 		color: #000
 		cursor: pointer
-		-webkit-transition: background 0.2s linear
-		-moz-transition: background 0.2s linear
-		-o-transition: background 0.2s linear
-		transition: background 0.2s linear
+		// -webkit-transition: background 0.2s linear
+		// -moz-transition: background 0.2s linear
+		// -o-transition: background 0.2s linear
+		// transition: background 0.2s linear
 		border-top: 1px solid $light
 		+rr
-		+tr(.4s)
+		transition: background-color .8s, border .8s, color .4s
 		&:hover
 			background-color: $orange
 			border-top: 1px solid $orange

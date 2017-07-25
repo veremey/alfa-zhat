@@ -39,6 +39,10 @@
 			&:after,
 			&:before
 				border-color: #fff
+		+r(540)
+			+ .header__search
+				width: 0
+				overflow: hidden
 
 	&__header
 		position: relative
@@ -1397,7 +1401,7 @@
 				&:after
 					content: ""
 					position: absolute
-					bottom: 4px
+					top: 4px
 					left: 4px
 					+s(icon-selector-checked)
 		&:disabled
@@ -1591,6 +1595,8 @@
 .blank
 	width: 100%
 	margin-top: 30px
+	+r(800)
+		padding: 0 5px
 	&__box
 		width: 100%
 		display: flex
@@ -1698,6 +1704,8 @@
 	.btn
 		display: inline-block
 		margin-top: 30px
+		+r(800)
+			margin-bottom: 5px
 
 .popupSlider
 	width: 100%
