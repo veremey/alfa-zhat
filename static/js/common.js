@@ -8,16 +8,16 @@ $(document).ready(function() {
 		$(this).parent('.search__field').removeClass('in_focus');
 	});
 
-	$('.has_sub').on('click', function(e) {
-		event.preventDefault();
-		$(this).addClass('is_active');
+	// $('.has_sub').on('click', function(e) {
+	// 	event.preventDefault();
+	// 	$(this).addClass('is_active');
+    //
+	// });
 
-	});
-
-	$('.menu__list').on('click', function() {
-		$('.menu__list').removeClass('is_active');
-		$(this).addClass('is_active');
-	});
+	// $('.menu__list').on('click', function() {
+	// 	$('.menu__list').removeClass('is_active');
+	// 	$(this).addClass('is_active');
+	// });
 
 
 	if($('.mainSlider').length){

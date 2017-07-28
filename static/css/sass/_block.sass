@@ -148,22 +148,21 @@
 				top: 15px
 				right: 10px
 				+arr(5, 8, $dark, l)
+				+rotate(-90)
 				+tr(.4s)
-		&.is_active
+		&:hover
 			border-left: 1px solid $orange
 			+tr(.4s)
 			&:after
 				transform-origin: center center
-				+rotate(-90)
+				+rotate(-180)
+				+r(540)
+					+rotate(-90)
 				// +arr(8, 5, $orange, b)
 			.menu__link
 				color: $orange
 			.submenu
-				&__list
-					border-top: 1px solid $light
-				&__link
-					font-size: 12px
-					padding: 10px 0 10px 30px
+				transform: rotateY(0deg)
 	&__link
 		display: block
 		font-size: 13px
@@ -174,14 +173,25 @@
 		+hover
 // --------------------------
 .submenu
-	position: relative
+	//position: relative
 	font-size: 0
-	// &__list
-
+	position: absolute
+	top: 0
+	left: calc(100% + 1px)
+	width: 200px
+	border: 1px solid $light
+	background-color: #fff
+	transform-origin: top left
+	transform: rotateY(90deg)
+	+tr(.4s)
+	+r(540)
+		display: none
+	&__list
+		border-top: 1px solid $light
 	&__link
 		display: block
-		font-size: 0
-		padding: 0
+		font-size: 12px
+		padding: 10px 0 10px 30px
 		color: $dark
 		+tr(.4s)
 		+rm
