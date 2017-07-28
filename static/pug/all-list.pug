@@ -1,0 +1,11 @@
+extends _layout
+block content
+	-var allLinks = ['index.html', 'catalog-list.html', 'catalog-tile.html', 'company.html', 'contact.html', 'lightbox.html', 'news.html', 'oneNew.html', 'ppp_form.html', 'promo.html'];
+
+	.out
+		.layout
+			h1.title__popular Список всех страниц
+			ul.simpleList.sdw.mod-last.section__inner
+				each list, ind in allLinks
+					li.simpleList__list
+						a(href=list, target="_blank").simpleList__link #{ind + 1} - #{list}

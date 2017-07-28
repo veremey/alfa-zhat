@@ -1728,3 +1728,31 @@
 	max-height: 30vh
 	+rh(660)
 		max-height: 14vh
+
+.simpleList
+	font-size: 0
+	&__list
+		position: relative
+		padding-left: 20px
+		margin-bottom: 15px
+		&:before
+			content: ''
+			position: absolute
+			top: 6px
+			left: 0
+			width: 6px
+			height: 6px
+			background-color: #7fc758
+			border-radius: 100%
+		&:last-child
+			margin-bottom: 5px
+	&__link
+		display: inline
+		font-size: 17px
+		line-height: 1.3
+		color: #404040
+		border-bottom: 1px solid #404040
+		+rm
+		+tr(.4s)
+		&:hover
+			border-color: $n
