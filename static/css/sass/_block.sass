@@ -16,30 +16,62 @@
 	+r(800)
 		width: 70px
 		+tr(.4s)
-		&:hover
+	&:hover
+		width: 270px
+		+r(800)
 			.catalog__title
 				opacity: 1
 				height: auto
 			+ .header__search
 				width: calc(100% - 300px)
-	&:hover
-		width: 270px
+		+r(650)
+			+ .header__search
+				width: calc(100% - 90px)
+		+r(650)
+			width: 70px
+
 		.catalog
 			&__header
 				background-color: $orange
 				&:after
 					+arr(10, 6, #fff, b)
 					+rotate(180)
+					+r(650)
+						+rotate(0)
+						top: 46%
 			&__title
 				color: #fff
+				+r(650)
+					opacity: 0
+					height: 0
+					overflow: hidden
+					transition: .4s .3s
 			&__nav
 				opacity: 1
 				transform: rotateX(0deg)
+				+r(650)
+					opacity: 0
+					transform: rotateX(0deg)
 		.burger
 			&:after,
 			&:before
 				border-color: #fff
-		+r(540)
+	&.is_active
+		+r(650)
+			width: 270px
+			.catalog
+				&__header
+					background-color: $orange
+					&:after
+						+arr(10, 6, #fff, b)
+						+rotate(180)
+				&__title
+					color: #fff
+					opacity: 1
+					height: auto
+				&__nav
+					opacity: 1
+					transform: rotateX(0deg)
 			+ .header__search
 				width: 0
 				overflow: hidden
@@ -72,6 +104,7 @@
 		opacity: 0
 		transform: rotateX(90deg)
 		+tr(.4s)
+		+r(650)
 
 	&__title
 		line-height: 46px
@@ -200,7 +233,6 @@
 		&:hover
 			color: $orange
 			background-color: #f6f6f6
-
 
 // -------------------------
 .mainSlider

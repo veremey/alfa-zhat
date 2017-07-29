@@ -12,6 +12,15 @@ $(document).ready(function() {
 		}
 	});
 
+	$(document).on('click', function(el){
+		var childr = $('.catalog').find('*');
+
+		if($(el.target).is(childr) == false ){
+			$('.catalog').removeClass('is_active');
+			// $('.select__list').slideUp('fast');
+		}
+	});
+
 });
 
 function select() {

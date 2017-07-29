@@ -151,6 +151,11 @@ $(document).ready(function() {
 		$(this).siblings('.info').toggleClass('is_visible').find('.info__wrap').toggleClass('is_visible');
 	});
 
+	$('.catalog').on('click', function() {
+		if($(window).width() < 650) {
+			$(this).toggleClass('is_active');
+		}
+	});
 
 	removeAside();
 
@@ -159,7 +164,7 @@ $(document).ready(function() {
 
 $(window).on('resize', function() {
 	removeAside();
-
+	$('.catalog').removeClass('is_active');
 });
 
 
