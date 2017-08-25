@@ -169,7 +169,7 @@ $(window).on('resize', function() {
 
 
 function removeAside () {
-	if($(document).width() < 1000) {
+	if($(document).width() < 1017) {
 		$('.catalog').removeClass('catalog_static');
 		$('.propose').css({
 			'width' : '100%'

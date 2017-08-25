@@ -213,18 +213,36 @@
 	left: calc(100% + 1px)
 	width: 200px
 	border: 1px solid $light
+	border-bottom: none
 	background-color: #fff
 	transform-origin: top left
 	transform: rotateY(90deg)
-	+tr(.4s)
-	+r(540)
+	// +tr(.4s)
+	+r(670)
 		display: none
+	&_wide
+		width: 360px
+		border-bottom: 1px solid $light
+		.submenu__list
+			display: inline-block
+			vertical-align: bottom
+			border: none
+			width: 178px
+			&_wide
+				width: 100%
+				white-space: nowrap
+				border-bottom: 1px solid $light
+				text-transform: uppercase
+				font-weight: bold
+
 	&__list
-		border-top: 1px solid $light
+		border-bottom: 1px solid $light
+		&_wide
+			border-bottom: 1px solid $light
 	&__link
 		display: block
 		font-size: 12px
-		padding: 10px 0 10px 30px
+		padding: 10px 20px 10px 30px
 		color: $dark
 		+tr(.4s)
 		+rm
@@ -233,6 +251,10 @@
 		&:hover
 			color: $orange
 			background-color: #f6f6f6
+
+.calculate
+	display: inline-block
+	color: $dark
 
 // -------------------------
 .mainSlider
